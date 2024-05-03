@@ -1,0 +1,618 @@
+/*--Code by Dan Blais
+040826486
+styles.css
+CST8285 Web Programming
+Due: February 25th, 2024
+Assignment 01*/
+
+/*This CSS document contains the styling information for styling the 3 webpages included in this
+    website. Every element on every page contains styling of some kind. Two Google fonts are imported and 
+    used throughout the pages: Inconsolata (Monospace) and Arvo (Sans Serif). The navbar styling was inspired
+    by a Youtube video which has been credited at the bottom of this document. Furthermore -webkit elements were
+    used to style the scrollbars. These elements cause errors in the W3 validator, however the rest of the style
+    code has been validated correctly, as per the included screenshot. Webpages will still be functional if the
+    browser does not support the -webkit-scrollbar elements. Furthermore responsive design media queries are included
+    at the bottom of the code to ensure that the webpage is beautiful and functional on all screensizes. The default
+    styling is for extra-small devices and the queries scale upwards: small, medium and large.*/
+
+@import url(https://fonts.googleapis.com/css2?family=Inconsolata&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Arvo&display=swap);
+
+:root {
+    font-family: Helvetica;
+    font-size: 8px;
+}
+
+.about-college {
+    background-color: rgb(5, 87, 37);
+    border: 2px solid #50C878;
+    border-radius: 25px;
+    margin: 1rem 2rem 1rem 2rem;
+    overflow: hidden;
+}
+
+.about-college h3 {
+    text-align: center;
+}
+
+.about-college img {
+    background-color: beige;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    min-height: auto;
+    max-width: 20%;
+    padding: 0.5rem 100vw 0.5rem 2rem;
+}
+
+.about-college img:hover {
+    background-color: rgb(209, 209, 200);
+}
+
+.about-college p {
+    padding: 1rem;
+}
+
+.about-me {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+#about-me-job {
+    color: #50C878;
+}
+
+#about-me-paragraph {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.14rem;
+    text-indent: 3rem;
+}
+
+#about-project {
+    margin: 0; 
+    padding-right: 1rem;
+}
+
+#about-project-header {
+    color: #50C878;
+    padding-right: 15rem;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(50, 50, 50);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#button-text {
+    font-size: 8px;
+}
+
+#contact {
+    color:#00FFFF;
+    text-decoration: none;
+}
+
+#contact:hover {
+    color: #50C878;
+}
+
+.course-description {
+    margin: 1rem;
+}
+
+.course-image {
+    border: 1px solid rgb(30, 30, 30);
+    height: auto;
+    width: 100%;
+}
+
+#course-page-desc, .hobbies {
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+#course-table {
+    border-spacing: 0 2px;
+    display: block;
+    height: 85vh;
+    margin: 1rem;
+    overflow: scroll;
+}
+
+#course-table::-webkit-scrollbar-track {
+    background-color: rgb(30, 30, 30);
+    margin: 1rem 0 1rem 0;
+}
+
+#course-table::-webkit-scrollbar-track:horizontal {
+    background-color: rgb(30, 30, 30);
+    margin: 0 1rem 0 1rem;
+}
+
+.data-item, .header-item {
+    padding: 1rem;
+    text-align: center;
+}
+
+.data-item:last-child {
+    text-align: left;
+}
+
+.divider {
+    border-top: 1px solid rgb(30, 30, 30);
+    margin: 0 3rem 0 3rem;
+    min-width: 80vw;
+}
+
+#download-text, #sort-button:hover {
+    color: #50C878;
+}
+
+#filter, #search, #sort-button {
+    background-color: rgb(40, 40, 40);
+    border: 1px solid rgb(50, 50, 50);
+    border-radius: 10px;
+    color: white;
+    font-size: 8px;
+}
+
+#filter:focus, #search:focus {
+    border: 1px solid #50C878;
+    outline: none;
+}
+
+#filter:hover, #search:hover, #sort-button:hover {
+    border: 1px solid #50C878;
+}
+
+footer {
+    background: linear-gradient(to top, rgba(50, 50, 50) 0%, rgba(0, 0, 0) 100%);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    display: flex;
+}
+
+.header {
+    align-items: center;
+    background-image: url(/web/Banner.png);
+    border-bottom: 2px solid Black;
+    display: flex;
+    font-family: "Arvo";
+    justify-content: center;
+    padding: 4rem 0 1rem 0;
+    text-shadow: 2px 2px black;
+}
+
+.header-text, .hobby-list {
+    margin: 0;
+    padding: 0;
+}
+
+.hobby-item, .hobby-item-alt {
+    border-radius: 25px;
+    border: 1px solid #50C878;
+    list-style: none;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    margin: 1rem 0 1rem 0;
+}
+
+.hobby-item {
+    background: linear-gradient(to left, rgba(30, 30, 30) 0%, rgba(45, 45, 45) 100%);
+}
+
+.hobby-item-alt {
+    background: linear-gradient(to right, rgba(30, 30, 30) 0%, rgba(45, 45, 45) 100%);
+}
+
+.logo-text {
+    align-items: center;
+    color: #50C878;
+    display: flex;
+    font-family: "Inconsolata";
+    font-size: 14px;
+    padding-bottom: 0.3rem;
+}
+
+.last-updated, #contact {
+    font-size: 8px;
+    margin: 0 0 1rem 1rem;
+}
+
+/*[1]*/
+.navbar {
+    background: linear-gradient(rgba(50, 50, 50) 0%, rgba(0 0 0) 100%);
+    height: 3rem;
+    position: fixed;
+    transition: height 100ms ease;
+    width: 100vw;
+    z-index: 1;
+}
+
+.navbar:hover {
+    height: 4.5rem;
+}
+
+.navbar:hover .navbar-text {
+    display: block;
+}
+
+/*[1]*/
+.navbar-group {
+    display: flex;
+    height: 100%;
+    justify-content: right;
+    list-style: none;
+    margin: 0;
+    padding: 0 1rem 0 0;
+}
+
+.navbar-logo {
+    display: flex;
+    margin: 0 50vw 0 0;
+}
+
+.navbar-logo svg, .footer svg {
+    padding: 0.5rem;
+    width: 2rem;
+}
+
+/*[1]*/
+.navbar-link {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 4.5rem;
+    text-decoration: none;
+}
+
+.navbar-link svg {
+    padding: 0.5rem;
+    width: 2rem;
+}
+
+.navbar-link:hover, .personal-links:hover {
+    background-color: rgba(30, 30, 30, 0.2);
+}
+
+.navbar-link:hover svg, .personal-links:hover svg, #sort-button:hover svg, #project-link:hover svg {
+    fill: #50C878;
+}
+
+.navbar-opt {
+    width: 10%;
+}
+
+/*[1]*/
+.navbar-text {
+    color: #50C878;
+    display: none;
+    font-family: "Inconsolata";
+}
+
+.options-panel {
+    display: flex;
+    gap: 0 1rem;
+    margin: 1rem 1rem 0 1.5rem;
+}
+
+.personal-links {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    padding-right: 0.5rem;
+    text-decoration: none;
+}
+
+.personal-links svg, #project-download svg {
+    padding-right: 0.5rem;
+    width: 2rem;
+}
+
+.personal-sites {
+    display: flex;
+    gap: 2rem;
+    height: 2rem;
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.personal-sites-text {
+    color: #50C878;
+}
+
+#profile-image {
+    border: 2px solid #50C878;
+    border-radius: 50px;
+    height: auto;
+    max-width: 40%;
+}
+
+#project-link {
+    align-items: center;
+    padding: 1.5rem 0.5rem 0.3rem 0.5rem;
+    text-decoration: none;
+}
+
+.project-links-inner {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+
+#resume {
+    border: transparent;
+    height: 70vw;
+    padding: 2rem;
+    Width: 90vw;
+}
+
+.resume-about {
+    margin: 0 2rem 0 2rem;
+}
+
+.resume-background, .project-links {
+    background-color: rgb(30, 30, 30);
+    border: 2px solid #50C878;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+#search {
+    font-size: 8px;
+    width: 50%;
+}
+
+::selection {
+    background-color: #50C878;
+}
+
+#sort-button {
+    align-items: center;
+    display:flex;
+    height: auto;
+}
+
+#sort-button svg {
+    height: 1rem;
+    margin: 0.2rem;
+    width: 1rem;
+}
+
+.table-background {
+    background-color: rgb(30, 30, 30);
+    border: 2px solid #50C878;
+    border-radius: 25px;
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+.table-data {
+    background-color: rgb(50, 50, 50);
+}
+
+.table-data:hover {
+    background-color: rgb(30, 30, 30);
+}
+
+#table-header {
+    background-color: rgb(30, 30, 30);
+    position: sticky;
+    top: 0;
+    z-index: 0;
+}
+
+#thumbnail {
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 10px;
+    height: auto;
+    margin: 1rem;
+    max-width: 20%;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 1rem;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(40, 40, 40);
+    border-left: 1px solid rgb(30, 30, 30);
+}
+
+::-webkit-scrollbar-track:horizontal {
+    background-color: rgb(40, 40, 40);
+    border-top: 1px solid rgb(30, 30, 30);
+}
+
+::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    background-color: #00FFFF;
+    border-left: 0.25rem solid transparent;
+    border-right: 0.25rem solid transparent;
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-clip: content-box;
+    background-color: #00FFFF;
+    border-top: 0.25rem solid transparent;
+    border-bottom: 0.25rem solid transparent;
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #50C878;
+}
+
+/*Small Devices*/
+@media only screen and (min-width: 600px) {
+    :root {
+        font-size: 10px;
+    }
+
+    #about-me-paragraph {
+        line-height: 1.2rem;
+    }
+
+    #button-text {
+        font-size: 10px;
+    }
+
+    #filter {
+        font-size: 10px;
+    }
+
+    .hobby-item, .hobby-item-alt {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+
+    .last-updated, #contact {
+        font-size: 10px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+    }
+
+    .navbar-logo {
+        margin: 0 60vw 0 0;
+    }
+
+    .options-panel {
+        margin: 1rem 1rem 0 1rem;
+    }
+
+    #resume {
+        padding: 1.5rem;
+    }
+
+    #search {
+        font-size: 10px;
+    }
+}
+
+/* Medium Devices*/
+@media only screen and (min-width: 768px) {
+    :root {
+        font-size: 12px;
+    }
+
+    #about-me-paragraph {
+        line-height: 1.35rem;
+    }
+
+    #button-text {
+        font-size: 12px;
+    }
+
+    #filter {
+        font-size: 12px;
+    }
+
+    .hobby-item, .hobby-item-alt {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+
+    .last-updated, #contact {
+        font-size: 12px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .navbar-logo {
+        margin: 0 60vw 0 0;
+    }
+
+    .options-panel {
+        margin: 1rem 1rem 0 1rem;
+    }
+
+    #resume {
+        padding: 1.5rem;
+    }
+
+    #search {
+        font-size: 12px;
+    }
+}
+
+/*Large Devices*/
+@media only screen and (min-width: 992px) {
+    :root {
+        font-size: 14px;
+    }
+
+    #about-me-paragraph {
+        line-height: 1.55rem;
+    }
+
+    #button-text {
+        font-size: 14px;
+    }
+
+    #filter {
+        font-size: 14px;
+    }
+
+    .hobby-item, .hobby-item-alt {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+
+    .last-updated, #contact {
+        font-size: 14px;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .navbar-logo {
+        margin: 0 60vw 0 0;
+    }
+
+    .options-panel {
+        margin: 1rem 1rem 0 1rem;
+    }
+
+    #resume {
+        padding: 1rem;
+    }
+
+    #search {
+        font-size: 14px;
+    }
+}
+
+/* References
+[1] Fireship (2021). Animated responsive navbar with CSS - Plus Other Useful Tricks. Youtube.ca
+  https://www.youtube.com/watch?v=biOMz4puGt8 (retrieved February 09, 2024).
+
+This reference comes from a channel I have been watching in my free time to expand
+my knowledge. I use SVGs in a Java project I am working on and wanted to incorporate
+them in this project, due to their versatility, then I stumbled upon this video and really liked the navbar style
+and decided to adopt it into my project. I have modified the code to my needs (mainly changing
+the navbar orientation from vertical, as in the video, to horizontal). 
+  */
+
+/*Note: This CSS file will validate with 4 errors and 12 warnings all related to the use of ::-webkit selectors.
+    The rest of the CSS has validated error free and should be functional cross-broswer */

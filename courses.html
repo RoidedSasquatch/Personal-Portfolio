@@ -1,0 +1,334 @@
+<!--Code by Dan Blais
+040826486
+courses.html
+CST8285 Web Programming
+Due: February 25th, 2024
+Assignment 01-->
+
+<!--This html document contains code to create a page that wil contain information about the courses
+    that the author has taken or is taking as of the last update time of the webpage. This page will be updated 
+    continually as the author takes more courses. The content is arranged in a scrollable table which is placed
+    underneath the fixed navbar and header sections. The div element containing the table also contains
+    a searchfield, filter selector and sort button. These input areas are functional and the script tag
+    containing a link to the included javascript file is located at the bottom of the html. Courses can be filtered
+    by course level and can be sorted by level in either ascending or descending order.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author" content="Dan Blais">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Portfolio - Dan Blais</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navbar-group">
+                <li class="navbar-logo">
+                    <svg fill="#50C878" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" />
+                    </svg>
+                    <span class="logo-text">Portfolio</span>
+                </li>
+                <li class="navbar-opt">
+                    <a href="index.html" class="navbar-link">
+                        <svg fill="#00FFFF" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 630 630"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                        </svg>
+                        <span class="navbar-text">About Me</span>
+                    </a>
+                </li>
+                <li class="navbar-opt">
+                    <a href="courses.html" class="navbar-link">
+                        <svg fill="#00FFFF" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 630 630"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9v28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5V291.9c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-28 49.2-35.7l157-61.7c8.2-3.2 17.5 .8 20.7 9s-.8 17.5-9 20.7l-157 61.7c-12.4 4.9-23.3 12.4-32.2 21.6l159.6 57.6c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z" />
+                        </svg>
+                        <span class="navbar-text">My Courses</span>
+                    </a>
+                </li>
+                <li class="navbar-opt">
+                    <a href="resume.html" class="navbar-link">
+                        <svg fill="#00FFFF" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 630 630"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        </svg>
+                        <span class="navbar-text">My Resume</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header">
+            <h1 class="header-text">My Courses</h1>
+        </div>
+    </header>
+
+    <main>
+        <p id="course-page-desc">This page includes of a table consisting of the courses I have taken while in the
+            Computer
+            Programming and Analysis program at Algonquin. Courses in which exemptions were granted for previous degree
+            courses are not included in
+            this list. Use the options panel to search, sort, or filter through the table.
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="table-background">
+            <form>
+                <div class="options-panel">
+                    <input type="text" id="search" onkeyup="searchCourses()" placeholder="Search Courses...">
+                    <select id="filter" onclick="filterLevel()">
+                        <option value="0" class="selection-item" selected>Filter By Level:</option>
+                        <option value="1" class="selection-item">Level 1</option>
+                        <option value="2" class="selection-item">Level 2</option>
+                        <option value="3" class="selection-item">Level 3</option>
+                        <option value="4" class="selection-item">Level 4</option>
+                        <option value="5" class="selection-item">Level 5</option>
+                        <option value="6" class="selection-item">Level 6</option>
+                    </select>
+                    <button type="button" id="sort-button" onclick="sortLevel(2)">
+                        <span id="button-text">Sort by Level</span>
+                        <svg fill="#00FFFF" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <table id="course-table" aria-label="Author Courses Table">
+                <tr id="table-header">
+                    <th class="header-item" scope="col">Image</th>
+                    <th class="header-item" scope="col">Course</th>
+                    <th class="header-item" scope="col">Level</th>
+                    <th class="header-item" scope="col">Code</th>
+                    <th class="header-item" scope="col">Description</th>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/CST8116.png" alt="CST8116 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Introduction to Computer Programming</td>
+                    <td class="data-item">1</td>
+                    <td class="data-item">CST8116</td>
+                    <td class="data-item">
+                        <p class="course-description">Introduction to Computer Programming is an introductory level
+                            course
+                            in Java Programming which teaches students the basics of Object-Oriented Programming and
+                            basic java constructs such
+                            as loops and arrays. Also provides an introduction to the planning process behind creating a
+                            program (UML,
+                            pseudocode).
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/CST8215.png" alt="CST8215 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Introduction to Database</td>
+                    <td class="data-item">1</td>
+                    <td class="data-item">CST8215</td>
+                    <td class="data-item">
+                        <p class="course-description"> Introduction to Database teaches students the basics of database
+                            design, detailing the
+                            logic, conceptual, and physical design stages. It then teaches students how to create and
+                            alter
+                            databases through
+                            DDL and DML SQL code.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/CST8118.png" alt="CST8118 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Computer Essentials</td>
+                    <td class="data-item">1</td>
+                    <td class="data-item">CST8118</td>
+                    <td class="data-item">
+                        <p class="course-description"> Computer Essentials teaches students the basics of computers
+                            including hardware, machine code,
+                            storage specifics, backup and recovery, and basic linux operations. Familiarizes students
+                            with
+                            the use of VMWare and other
+                            VM tools.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/MAT8001.png" alt="MAT8001 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Tech Math for Computer Science</td>
+                    <td class="data-item">1</td>
+                    <td class="data-item">MAT8001</td>
+                    <td class="data-item">
+                        <p class="course-description"> Tech Math for Computer Science ensures that students have a
+                            required
+                            level of knowledge in
+                            mathematics concepts that would be used by programmers in the work force. Concepts include
+                            binary operations,
+                            trigonomoetry, algebra, and graphing functions.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/CST8300.png" alt="CST8300 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Achieving Success In Changing Environments</td>
+                    <td class="data-item">1</td>
+                    <td class="data-item">CST8300</td>
+                    <td class="data-item">
+                        <p class="course-description"> Achieving Success in Changing Environments prepares students for
+                            a
+                            career as a programmer by
+                            teaching soft skills, resume building, interview skills, and how to stay current in a
+                            rapidly
+                            changing industry. This course
+                            stresses the importance of communication in the workplace but also highlights the
+                            criticallity
+                            of hard skills.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/CST8284.png" alt="CST8284 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Object Oriented Programming</td>
+                    <td class="data-item">2</td>
+                    <td class="data-item">CST8284</td>
+                    <td class="data-item">
+                        <p class="course-description"> Object Oriented Programming teaches advanced Java techniques
+                            including Encapsulation, Inheritance, Abstraction,
+                            and Polymorphism. Concepts relating to threading and memory management are also discussed as
+                            well as the four access modifiers available in
+                            Java: public, private, protected, package.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/CST8285.png" alt="CST8285 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Web Programming</td>
+                    <td class="data-item">2</td>
+                    <td class="data-item">CST8285</td>
+                    <td class="data-item">
+                        <p class="course-description"> Web Programming covers topics pertaining to web development and
+                            how
+                            to maintain a website. Concepts covered in
+                            the course include HTML development, CSS development, writing Javascript, and PHP
+                            development.
+                            Students are taught about the
+                            various sections of a website, forms, and how data is sent to and from the server, as well
+                            as
+                            how the browser reads the code.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/CST8102.png" alt="CST8102 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Operating Systems Fundamentals</td>
+                    <td class="data-item">2</td>
+                    <td class="data-item">CST8102</td>
+                    <td class="data-item">
+                        <p class="course-description"> Operating System Fundamentals instructs students in the Linux
+                            terminal and Linux terminal operations.
+                            As part of this course, students create a new Ubuntu VM and disable the file explorer's GUI.
+                            Students are then taught numerous
+                            commands and syntax to allow filesystem operation from the terminal. Students also learn
+                            about
+                            how Linux operates on a system.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/CST2355.png" alt="CST2355 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Database Systems</td>
+                    <td class="data-item">2</td>
+                    <td class="data-item">CST2355</td>
+                    <td class="data-item">
+                        <p class="course-description">Database Systems furthers students knowledge of SQL teaching
+                            intermediate concepts including triggers,
+                            roll and cube operations, and stored procedures. The course also educated students on
+                            various
+                            SQL distributions and management tools
+                            including MS Access, MS SQL Server, MS SQL Management Studio, MongoDB, and OracleDB.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/ENL2019.png" alt="ENL2019 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Technical Communication for Engineering Tech.</td>
+                    <td class="data-item">2</td>
+                    <td class="data-item">ENL2019</td>
+                    <td class="data-item">
+                        <p class="course-description">Technical Communication for Engineering Technology enhances
+                            students
+                            ability to communicate with employers
+                            and more specifically, how to communicate technical concepts and conduct presentations for
+                            co-workers. The class also teaches students
+                            how to properly research and culminates in a research project worth the majority of the
+                            grade.
+                        </p>
+                    </td>
+                </tr>
+                <tr class="table-data">
+                    <td class="data-item">
+                        <img src="./web/GEP1001.png" alt="GEP1001 Image" class="course-image">
+                    </td>
+                    <td class="data-item">Coop Education and Job Readiness</td>
+                    <td class="data-item">2</td>
+                    <td class="data-item">GEP1001</td>
+                    <td class="data-item">
+                        <p class="course-description">Coop Education and Job Readiness prepares coop students for the
+                            job
+                            search process as well as
+                            how to conduct oneself while in the coop work terms. The course educates students on how to
+                            prepare an exceptional resume\
+                            and cover letter, as well as how to be successful in the workplace.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-logo">
+                <svg fill="#50C878" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" />
+                </svg>
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <a href="mailto:blai0327@algonquinlive.com" id="contact">Contact Me</a>
+            <span class="last-updated">Last Updated: February 24, 2024</span>
+        </div>
+    </footer>
+
+    <script src="./javascript/scripts.js"></script>
+
+</body>
+
+</html>
